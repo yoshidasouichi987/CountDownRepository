@@ -74,3 +74,6 @@ document.addEventListener('DOMContentLoaded', async () => {
   generatePermutations();
   document.querySelector("button").addEventListener('click', startCountdown);
 });
+//npm startで実行
+//lsof -ti:3000
+//kill <表示される数字>でプロセスを終了
