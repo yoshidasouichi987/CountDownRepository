@@ -21,6 +21,7 @@ app.get('/api/files/:slideNum', (req, res) => {
     res.json([]);
   }
 });
-app.listen(PORT, () => {
+//localhostでなく0.0.0.0でサーバをリスンする
+app.listen(PORT, '0.0.0.0' ,() => {
   console.log(`Server running at http://localhost:${PORT}`);
 });

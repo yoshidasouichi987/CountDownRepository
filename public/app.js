@@ -7,14 +7,13 @@ let countDownId2;
 let underCounting;//カウントダウン中か
 
 const img = document.getElementById("img");
-const button = document.querySelector("button");
-const anim = document.querySelector(".animation");
+const button = document.getElementById("button");
+const anim = document.getElementById("CountBar");
 const num = document.getElementById("num").textContent;//サーバに送る
 
 const Length = 2;
 //画像ファイルの取得
 async function loadFiles() {
-  const num = document.getElementById("num").textContent;
   const response = await fetch(`/api/files/${num}`);
   FileNames = await response.json();
   
