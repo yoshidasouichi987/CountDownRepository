@@ -1,6 +1,7 @@
 body {
     text-align: center;
     font-family: Arial, sans-serif;
+    height: 100vw;
 }
 .animation{
     width: 0;
@@ -50,11 +51,12 @@ button{
 }
 .img {
     position: fixed;
-    top: 5%;
+    top: 10%;
     bottom: 30%;
-    height: 65%;
+    height: 60%;
     width: 70%;
     left: 15%;
+    object-fit: contain;
     
     align-items: center;
     justify-content: center;
@@ -62,14 +64,69 @@ button{
 
     display: none;
 }
-
+.imgh{
+    top: 10%;
+    bottom: 5%;
+    height: 80%;
+}
+#display{
+    position: fixed;
+    display: block;
+    top: 3%;
+    height: 7%;
+    width: 100%;
+    background-color: aqua;
+    font-size:3vh;
+}
+#num{
+    display: none;
+}
+.BOOL_Buttons{
+    position: absolute;
+    height: 15%;
+    display: none;
+    width: 5%;
+    right: 0;
+    bottom: 0;
+    background-color: white;
+    padding: 0;
+    >.wrap{
+        position: relative;
+        width: 100%;
+        height: 100%;
+        >button{
+            position: absolute;
+            display: block;
+            background-color: white;
+            left: 0;
+            height: 30%;
+            width: 100%;
+            border-bottom: solid 1vh rgb(150,150,150);
+            border-right: solid 1vw rgb(100,100,100);
+            font-size: 1vw;
+        }
+        #button0{
+            top: 0;
+        }
+        #button1{
+            bottom: 0;
+        }
+        button:hover{
+            border-bottom: solid 0.5vw rgb(150,150,150);
+            border-right: solid 0.5vw rgb(100,100,100);
+        }
+    }
+}
+.BOOL_img{
+        display:none;
+        width: 85%;
+        height: 100%;
+        position: absolute;
+        right: 25%;
+        top: 0;
+        /*z-index: 9999;*/
+        background-color: bisque;
+    }
 .visible {
     display: block;
-}
-.imgh{
-    top: 5%;
-    bottom: 5%;
-    height: 90%;
-    width: 100%;
-    left: 0;
 }
