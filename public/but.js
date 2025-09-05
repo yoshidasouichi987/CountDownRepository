@@ -12,9 +12,9 @@ var pushed = null;
 
 button0.addEventListener('click',()=>{
     if(!isPushing){
-      BOOL_img.src = "";
+      BOOL_img.childNodes[0].src = "BOOLIMG0.jpg";
       BOOL_img.classList.add("visible");
-      audio0.play();
+      //audio0.play();
       isPushing = true;
       pushed = 0;
     }else if(pushed === 0){
@@ -24,9 +24,9 @@ button0.addEventListener('click',()=>{
 });
 button1.addEventListener('click',()=>{
     if(!isPushing){
-      BOOL_img.src = "";
+      BOOL_img.childNodes[0].src = "BOOLIMG1.jpg";
       BOOL_img.classList.add("visible");
-      audio1.play();
+      //audio1.play();  
       isPushing = true;
       pushed = 1;
     }else if(pushed === 1){
