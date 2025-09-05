@@ -19,18 +19,20 @@ async function loadFiles(){
     if(num == 2){
         num = parseInt(Math.random()*3+1) + 1;
     }
-  const response = await fetch(`/api/files/${num}`);
+  const response = await fetch(`/slides/${num}`);
   FileNames = await response.json();
+  console.log(FileNames);
   
   if (FileNames.length % 2 === 1) {
     console.log("ファイルの数が奇数です");
-    throw new Error("ファイルの数が奇数です");
+    //throw new Error("ファイルの数が奇数です");
   }
 }
 //10秒カウント（同期処理）
 function countdown() {
-new Promise((resolve) => {
+return new Promise((resolve) => {
     underCounting = true;
+    timeCounter = 10;
     countDownId = setInterval(() => {
       timeCounter--;
       if (timeCounter === 0) {
@@ -83,8 +85,7 @@ function generatePermutations() {
 //カウント開始
 async function startCountDown(permarr){
     //初期化
-    timeCounter = 10;
-    img.src = `slides1/${FileNames[permarr[currentIndex]*2]}`;
+    img.src = FileNames[permarr[currentIndex]*2];
     button.classList.remove('visible');
     img.classList.add('visible');
     img.classList.add('imgh');//高めに表示
@@ -94,7 +95,7 @@ async function startCountDown(permarr){
     //カウントダウン開始（同期処理 - 完了まで待機）
     await countdown();
     //10秒間以内画像を表示
-    img.src = `slides1/${FileNames[permarr[currentIndex]*2+1]}`;
+    img.src = FileNames[permarr[currentIndex]*2+1];
     img.classList.add('visible');
     img.classList.remove('imgh');
     anim.classList.remove('visible');
